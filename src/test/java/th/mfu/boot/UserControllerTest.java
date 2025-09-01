@@ -31,7 +31,7 @@ public class UserControllerTest {
         ResponseEntity<String> response = controller.registerUser(request);
 
         // Assert
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertEquals("User registered successfully", response.getBody());
 
         // verify(users).containsKey("john");
@@ -59,7 +59,7 @@ public class UserControllerTest {
         ResponseEntity<String> response2 = controller.registerUser(request2);
 
         // Assert
-        assertEquals(HttpStatus.OK, response1.getStatusCode());
+        assertEquals(HttpStatus.CREATED, response1.getStatusCode());
         assertEquals("User registered successfully", response1.getBody());
 
         assertEquals(HttpStatus.CONFLICT, response2.getStatusCode());
